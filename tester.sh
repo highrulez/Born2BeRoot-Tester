@@ -207,7 +207,7 @@ if [ -d "/var/log/sudo/" ];then
 fi
 
 echo
-printf "${MAGENTA}8. Cronjon${DEF_COLOR}\n";
+printf "${MAGENTA}8. Cronjob${DEF_COLOR}\n";
 RES=$(crontab -l | grep monitor.sh | awk '$1 == "*/10" {print $1}')
 if [ $RES == "*/10" ];then
         printf "${GREEN}[GOOD] ✔${GRAY} cronjob setting is */10${DEF_COLOR}\n";
