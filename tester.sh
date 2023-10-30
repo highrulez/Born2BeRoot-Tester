@@ -110,10 +110,10 @@ if [ $RES -gt 1 ];then
         printf "${GREEN}[GOOD] ✔${GRAY} Port 4242 open${DEF_COLOR}\n";
   else
         printf "${RED}[FAILED] ✗${GRAY} Port 4242 closed${DEF_COLOR}\n";
+fi
 
 echo
 printf "${MAGENTA}4. UFW (Port 80 for HTTP - Bonus Part)${DEF_COLOR}\n";
-fi
 RES=$(sudo ufw status | grep 80 | wc -l)
 if [ $RES -gt 1 ];then
         printf "${GREEN}[GOOD] ✔${GRAY} Port 80 open (Only for bonus part)${DEF_COLOR}\n";
