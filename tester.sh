@@ -26,87 +26,87 @@ fi
 RES=$(ls /usr/bin/*session)
 printf "${MAGENTA}1. GUI MODE?${DEF_COLOR}\n";
   if [[ $RES == "/usr/bin/dbus-run-session" ]]; then
-    printf "${GREEN}[OK] ${DEF_COLOR}\n";
+    printf "${GREEN}[GOOD] ✔${DEF_COLOR}\n";
   else
-    printf "${RED}[KO] ${DEF_COLOR}\n";
+    printf "${RED}[FAILED] ✗${DEF_COLOR}\n";
 fi
 
 echo
 printf "${MAGENTA}2. Disk partitions${DEF_COLOR}\n";
 RES=$(lsblk | grep lvm | wc -l)
 if [ $RES -gt 1 ];then
-  printf "${GREEN}[OK] ${DEF_COLOR}\n";
+  printf "${GREEN}[GOOD] ✔${DEF_COLOR}\n";
   else
-        printf "${RED}[KO] ${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${DEF_COLOR}\n";
 fi
 RES=$(lsblk | grep home | wc -l)
 if [ $RES -gt 0 ];then
-        printf "${GREEN}[OK] ${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${DEF_COLOR}\n";
   else
-        printf "${RED}[KO] ${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${DEF_COLOR}\n";
 fi
 RES=$(lsblk | grep swap | wc -l)
 if [ $RES -gt 0 ];then
-        printf "${GREEN}[OK] ${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${DEF_COLOR}\n";
   else
-        printf "${RED}[KO] ${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${DEF_COLOR}\n";
 fi
 RES=$(lsblk | grep root | wc -l)
 if [ $RES -gt 0 ];then
-        printf "${GREEN}[OK] ${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${DEF_COLOR}\n";
   else
-        printf "${RED}[KO] ${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${DEF_COLOR}\n";
 fi
 
 echo
 printf "${MAGENTA}3. Bonus Disk Partitions (Optional)${DEF_COLOR}\n";
 RES=$(lsblk | grep var | wc -l)
 if [ $RES -gt 0 ];then
-        printf "${GREEN}[OK] ${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${DEF_COLOR}\n";
   else
-        printf "${RED}[KO] ${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${DEF_COLOR}\n";
 fi
 RES=$(lsblk | grep srv | wc -l)
 if [ $RES -gt 0 ];then
-        printf "${GREEN}[OK] ${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${DEF_COLOR}\n";
   else
-        printf "${RED}[KO] ${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${DEF_COLOR}\n";
 fi
 RES=$(lsblk | grep tmp | wc -l)
 if [ $RES -gt 0 ];then
-        printf "${GREEN}[OK] ${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${DEF_COLOR}\n";
   else
-        printf "${RED}[KO] ${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${DEF_COLOR}\n";
 fi
 RES=$(lsblk | grep var-log | wc -l)
 if [ $RES -gt 0 ];then
-        printf "${GREEN}[OK] ${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${DEF_COLOR}\n";
   else
-        printf "${RED}[KO] ${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${DEF_COLOR}\n";
 fi
 
 echo
 printf "${MAGENTA}4. UFW (Uncomplicated Firewall)${DEF_COLOR}\n";
 RES=$(sudo ufw status | grep -v ALLOW | grep active | wc -l)
 if [ $RES -gt 0 ];then
-        printf "${GREEN}[OK] ${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${DEF_COLOR}\n";
   else
-        printf "${RED}[KO] ${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${DEF_COLOR}\n";
 fi
 RES=$(sudo ufw status | grep 4242 | wc -l)
 if [ $RES -gt 1 ];then
-        printf "${GREEN}[OK] ${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${DEF_COLOR}\n";
   else
-        printf "${RED}[KO] ${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${DEF_COLOR}\n";
 fi
 
 echo
 RES=$(sudo service ssh status | awk '$1 == "Active:"' | grep running | wc -l)
 printf "${MAGENTA}5. SSH${DEF_COLOR}\n";
 if [ $RES -gt 0 ];then
-        printf "${GREEN}[OK] ${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${DEF_COLOR}\n";
   else
-        printf "${RED}[KO] ${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${DEF_COLOR}\n";
 fi
 RES=$(which lsof | wc -l)
 if [ $RES -eq 0 ];then
@@ -115,9 +115,9 @@ if [ $RES -eq 0 ];then
 fi
 RES=$(sudo lsof -i -P -n | grep sshd | grep LISTEN | grep 4242 | wc -l)
 if [ $RES -gt 1 ];then
-        printf "${GREEN}[OK] ${GREEN}✔${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${DEF_COLOR}\n";
   else
-        printf "${RED}[KO] ${RED}☠${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${DEF_COLOR}\n";
 fi
 
 echo
@@ -127,92 +127,92 @@ CONCAT="42"
 RES="$RES$CONCAT"
 RES2=$(hostname)
 if [ $RES == $RES2 ];then
-        printf "${GREEN}[OK] ${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${DEF_COLOR}\n";
   else
-        printf "${RED}[KO] ${RED}☠${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${DEF_COLOR}\n";
 fi
 
 echo
 printf "${MAGENTA}7. Password policy${DEF_COLOR}\n";
 RES=$(cd ~ && cat /etc/pam.d/common-password | grep -o minlen=10)
 if [ $RES == "minlen=10" ];then
-        printf "${GREEN}1.[OK] ${GREEN}✔${GRAY} minlen ${DEF_COLOR}\n";
+        printf "${GREEN}1.[GOOD] ✔${GRAY} minlen ${DEF_COLOR}\n";
   else
-        printf "${RED}1.[KO] ${RED}☠${GRAY} minlen ${DEF_COLOR}\n";
+        printf "${RED}1.[FAILED] ✗${GRAY} minlen ${DEF_COLOR}\n";
 fi
 RES=$(cd ~ && cat /etc/pam.d/common-password | grep -o ucredit=-1)
 if [ $RES == "ucredit=-1" ];then
-        printf "${GREEN}2.[OK] ${GREEN}✔${GRAY} uppercase ${DEF_COLOR}\n";
+        printf "${GREEN}2.[GOOD] ✔${GRAY} uppercase ${DEF_COLOR}\n";
   else
-        printf "${RED}2.[KO] ${RED}☠${GRAY} uppercase ${DEF_COLOR}\n";
+        printf "${RED}2.[FAILED] ✗${GRAY} uppercase ${DEF_COLOR}\n";
 fi
 RES=$(cd ~ && cat /etc/pam.d/common-password | grep -o lcredit=-1)
 if [ $RES == "lcredit=-1" ];then
-        printf "${GREEN}3.[OK] ${GREEN}✔${GRAY} lowercase ${DEF_COLOR}\n";
+        printf "${GREEN}3.[GOOD] ✔${GRAY} lowercase ${DEF_COLOR}\n";
   else
-        printf "${RED}3.[KO] ${RED}☠${GRAY} lowercase ${DEF_COLOR}\n";
+        printf "${RED}3.[FAILED] ✗${GRAY} lowercase ${DEF_COLOR}\n";
 fi
 RES=$(cd ~ && cat /etc/pam.d/common-password | grep -o dcredit=-1)
 if [ $RES == "dcredit=-1" ];then
-        printf "${GREEN}4.[OK] ${GREEN}✔${GRAY} digit ${DEF_COLOR}\n";
+        printf "${GREEN}4.[GOOD] ✔${GRAY} digit ${DEF_COLOR}\n";
   else
-        printf "${RED}4.[KO] ${RED}☠${GRAY} digit ${DEF_COLOR}\n";
+        printf "${RED}4.[FAILED] ✗${GRAY} digit ${DEF_COLOR}\n";
 fi
 RES=$(cd ~ && cat /etc/pam.d/common-password | grep -o maxrepeat=3)
 if [ $RES == "maxrepeat=3" ];then
-        printf "${GREEN}5.[OK] ${GREEN}✔${GRAY} consecutive char ${DEF_COLOR}\n";
+        printf "${GREEN}5.[GOOD] ✔${GRAY} consecutive char ${DEF_COLOR}\n";
   else
-        printf "${RED}5.[KO] ${RED}☠${GRAY} consecutive char ${DEF_COLOR}\n";
+        printf "${RED}5.[FAILED] ✗${GRAY} consecutive char ${DEF_COLOR}\n";
 fi
 RES=$(cd ~ && cat /etc/pam.d/common-password | grep -o difok=7)
 if [ $RES == "difok=7" ];then
-        printf "${GREEN}6.[OK] ${GREEN}✔${GRAY} difok ${DEF_COLOR}\n";
+        printf "${GREEN}6.[GOOD] ✔${GRAY} difok ${DEF_COLOR}\n";
   else
-        printf "${RED}6.[KO] ${RED}☠${GRAY} difok ${DEF_COLOR}\n";
+        printf "${RED}6.[FAILED] ✗${GRAY} difok ${DEF_COLOR}\n";
 fi
 RES=$(cd ~ && cat /etc/pam.d/common-password | grep -o enforce_for_root)
 if [ $RES == "enforce_for_root" ];then
-        printf "${GREEN}7.[OK] ${GREEN}✔${GRAY} enforce for root ${DEF_COLOR}\n";
+        printf "${GREEN}7.[GOOD] ✔${GRAY} enforce for root ${DEF_COLOR}\n";
   else
-        printf "${RED}7.[KO] ${RED}☠${GRAY} enforce for root ${DEF_COLOR}\n";
+        printf "${RED}7.[FAILED] ✗${GRAY} enforce for root ${DEF_COLOR}\n";
 fi
 RES=$(cd ~ && cat /etc/pam.d/common-password | grep -o reject_username)
 if [ $RES == "reject_username" ];then
-        printf "${GREEN}8.[OK] ${GREEN}✔${GRAY} reject username ${DEF_COLOR}\n";
+        printf "${GREEN}8.[GOOD] ✔${GRAY} reject username ${DEF_COLOR}\n";
   else
-        printf "${RED}8.[KO] ${RED}☠${GRAY} reject username ${DEF_COLOR}\n";
+        printf "${RED}8.[FAILED] ✗${GRAY} reject username ${DEF_COLOR}\n";
 fi
 RES=$(cd && cat /etc/login.defs | grep PASS_MAX_DAYS | grep -o 30)
 if [ $RES == "30" ];then
-        printf "${GREEN}9.[OK] ${GREEN}✔${GRAY} passwd expire days ${DEF_COLOR}\n";
+        printf "${GREEN}9.[GOOD] ✔${GRAY} passwd expire days ${DEF_COLOR}\n";
   else
-        printf "${RED}9.[KO] ${RED}☠${GRAY} passwd expire days ${DEF_COLOR}\n";
+        printf "${RED}9.[FAILED] ✗${GRAY} passwd expire days ${DEF_COLOR}\n";
 fi
 RES=$(cd && cat /etc/login.defs | grep PASS_MIN_DAYS | grep -o 2)
 if [ $RES == "2" ];then
-        printf "${GREEN}10.[OK] ${GREEN}✔${GRAY} days allowed before the modification ${DEF_COLOR}\n";
+        printf "${GREEN}10.[GOOD] ✔${GRAY} days allowed before the modification ${DEF_COLOR}\n";
   else
-        printf "${RED}10.[KO] ${RED}☠${GRAY} days allowed before the modification ${DEF_COLOR}\n";
+        printf "${RED}10.[FAILED] ✗${GRAY} days allowed before the modification ${DEF_COLOR}\n";
 fi
 RES=$(cd && cat /etc/login.defs | grep PASS_WARN_AGE | grep -o 7)
 if [ $RES == "7" ];then
-        printf "${GREEN}11.[OK] ${GREEN}✔${GRAY} warning message ${DEF_COLOR}\n";
+        printf "${GREEN}11.[GOOD] ✔${GRAY} warning message ${DEF_COLOR}\n";
   else
-        printf "${RED}11.[KO] ${RED}☠${GRAY} warning message ${DEF_COLOR}\n";
+        printf "${RED}11.[FAILED] ✗${GRAY} warning message ${DEF_COLOR}\n";
 fi
 if [ -d "/var/log/sudo/" ];then
-        printf "${GREEN}12.[OK] ${GREEN}✔${GRAY} folder /var/log/sudo exist ${DEF_COLOR}\n";
+        printf "${GREEN}12.[GOOD] ✔${GRAY} folder /var/log/sudo exist ${DEF_COLOR}\n";
   else
-        printf "${RED}12.[KO] ${RED}☠${GRAY} folder /var/log/sudo exist ${DEF_COLOR}\n";
+        printf "${RED}12.[FAILED] ✗${GRAY} folder /var/log/sudo exist ${DEF_COLOR}\n";
 fi
 
 echo
 printf "${MAGENTA}8. Crontab${DEF_COLOR}\n";
 RES=$(crontab -l | grep monitoring.sh | awk '$1 == "*/10" {print $1}')
 if [ $RES == "*/10" ];then
-        printf "${GREEN}[OK] ${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${DEF_COLOR}\n";
   else
-        printf "${RED}[KO] ${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${DEF_COLOR}\n";
 fi
 echo
 
