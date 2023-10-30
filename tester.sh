@@ -216,9 +216,13 @@ if [ $RES == "*/10" ];then
 fi
 echo
 
-printf ${BLUE}"  _    _      _             _           ____    _ _ ___ _  ___    \n"${DEF_COLOR};
-printf ${BLUE}" | |_ (_)__ _| |_  _ _ _  _| |___ ___  / __ \  | | |_  ) |/ / |   \n"${DEF_COLOR};
-printf ${BLUE}" | ' \| / _` | ' \| '_| || | / -_)_ / / / _` | |_  _/ /| ' <| |__ \n"${DEF_COLOR};
-printf ${BLUE}" |_||_|_\__, |_||_|_|  \_,_|_\___/__| \ \__,_|   |_/___|_|\_\____|\n"${DEF_COLOR};
-printf ${BLUE}"        |___/                          \____/                     \n"${DEF_COLOR};
+
+printf ${BLUE}"    :::     ::::::::  :::    ::: :::        \n"${DEF_COLOR};
+printf ${BLUE}"   :+:     :+:    :+: :+:   :+:  :+:        \n"${DEF_COLOR};
+printf ${BLUE}"  +:+ +:+        +:+  +:+  +:+   +:+        \n"${DEF_COLOR};
+printf ${BLUE}" +#+  +:+      +#+    +#++:++    +#+        \n"${DEF_COLOR};
+printf ${BLUE}"+#+#+#+#+#+  +#+      +#+  +#+   +#+        \n"${DEF_COLOR};
+printf ${BLUE}"      #+#   #+#       #+#   #+#  #+#        \n"${DEF_COLOR};
+printf ${BLUE}"      ###  ########## ###    ### ########## "${DEF_COLOR};
+
 
