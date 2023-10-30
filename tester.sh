@@ -11,11 +11,11 @@ CYAN='\033[0;96m'
 GRAY='\033[0;90m'
 WHITE='\033[0;97m'
 
-printf ${WHITE}"  ____                   ____  ____       ____             _   \n"${DEF_COLOR};
-printf ${WHITE}" | __ )  ___  _ __ _ __ |___ \| __ )  ___|  _ \ ___   ___ | |_ \n"${DEF_COLOR};
-printf ${WHITE}" |  _ \ / _ \| '__| '_ \  __) |  _ \ / _ \ |_) / _ \ / _ \| __|\n"${DEF_COLOR};
-printf ${GRAY}" | |_) | (_) | |  | | | |/ __/| |_) |  __/  _ < (_) | (_) | |_ \n"${DEF_COLOR};
-printf ${GRAY}" |____/ \___/|_|  |_| |_|_____|____/ \___|_| \_\___/ \___/ \__| by highrulez\n\n"${DEF_COLOR};
+printf ${BLUE}"  ____                   ____  ____       ____             _   \n"${DEF_COLOR};
+printf ${BLUE}" | __ )  ___  _ __ _ __ |___ \| __ )  ___|  _ \ ___   ___ | |_ \n"${DEF_COLOR};
+printf ${BLUE}" |  _ \ / _ \| '__| '_ \  __) |  _ \ / _ \ |_) / _ \ / _ \| __|\n"${DEF_COLOR};
+printf ${CYAN}" | |_) | (_) | |  | | | |/ __/| |_) |  __/  _ < (_) | (_) | |_ \n"${DEF_COLOR};
+printf ${CYAN}" |____/ \___/|_|  |_| |_|_____|____/ \___|_| \_\___/ \___/ \__| by highrulez\n\n"${DEF_COLOR};
                                                                                                                                                                       
 USER=$(whoami)
 
@@ -216,4 +216,4 @@ if [ $RES == "*/10" ];then
 fi
 echo
 
-printf ${WHITE}"Mandatory test Done! It's time to test WordPress in a browser, and other services if any (ex. ftp / fail2ban / Cloudflare tunnel).${DEF_COLOR}\n\n";
+printf ${YELLOW}"Mandatory test Done! It's time to test WordPress in a browser, and other services if any (ex. ftp / fail2ban / Cloudflare tunnel).${DEF_COLOR}\n\n";
