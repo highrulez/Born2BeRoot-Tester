@@ -24,13 +24,7 @@ if [ $USER != "root" ];then
   exit;
 fi
 RES=$(ls /usr/bin/*session)
-# printf "${MAGENTA}GUI MODE?${DEF_COLOR}\n";
-printf "${MAGENTA}  _    _    _     _    _    _    _  ${DEF_COLOR}\n";
-printf "${MAGENTA} / \  / \  / \   / \  / \  / \  / \ ${DEF_COLOR}\n";
-printf "${MAGENTA}( G )( U )( I ) ( M )( O )( D )( E )${DEF_COLOR}\n";
-printf "${MAGENTA} \_/  \_/  \_/   \_/  \_/  \_/  \_/ ${DEF_COLOR}\n";
-
-
+printf "${MAGENTA}1. GUI MODE?${DEF_COLOR}\n";
   if [[ $RES == "/usr/bin/dbus-run-session" ]]; then
     printf "${GREEN}[OK] ${DEF_COLOR}\n";
   else
@@ -38,7 +32,7 @@ printf "${MAGENTA} \_/  \_/  \_/   \_/  \_/  \_/  \_/ ${DEF_COLOR}\n";
 fi
 
 echo
-printf "${MAGENTA}Disk partitions${DEF_COLOR}\n";
+printf "${MAGENTA}2. Disk partitions${DEF_COLOR}\n";
 RES=$(lsblk | grep lvm | wc -l)
 if [ $RES -gt 1 ];then
   printf "${GREEN}[OK] ${DEF_COLOR}\n";
@@ -65,7 +59,7 @@ if [ $RES -gt 0 ];then
 fi
 
 echo
-printf "${MAGENTA}Bonus Disk partitions${DEF_COLOR}\n";
+printf "${MAGENTA}3. Bonus Disk Partitions (Optional)${DEF_COLOR}\n";
 RES=$(lsblk | grep var | wc -l)
 if [ $RES -gt 0 ];then
         printf "${GREEN}[OK] ${DEF_COLOR}\n";
@@ -92,8 +86,23 @@ if [ $RES -gt 0 ];then
 fi
 
 echo
+printf "${MAGENTA}4. UFW (Uncomplicated Firewall)${DEF_COLOR}\n";
+RES=$(sudo ufw status | grep -v ALLOW | grep active | wc -l)
+if [ $RES -gt 0 ];then
+        printf "${GREEN}[OK] ${DEF_COLOR}\n";
+  else
+        printf "${RED}[KO] ${DEF_COLOR}\n";
+fi
+RES=$(sudo ufw status | grep 4242 | wc -l)
+if [ $RES -gt 1 ];then
+        printf "${GREEN}[OK] ${DEF_COLOR}\n";
+  else
+        printf "${RED}[KO] ${DEF_COLOR}\n";
+fi
+
+echo
 RES=$(sudo service ssh status | awk '$1 == "Active:"' | grep running | wc -l)
-printf "${MAGENTA}SSH${DEF_COLOR}\n";
+printf "${MAGENTA}5. SSH${DEF_COLOR}\n";
 if [ $RES -gt 0 ];then
         printf "${GREEN}[OK] ${DEF_COLOR}\n";
   else
@@ -112,22 +121,7 @@ if [ $RES -gt 1 ];then
 fi
 
 echo
-printf "${MAGENTA}UFW (Uncomplicated Firewall)${DEF_COLOR}\n";
-RES=$(sudo ufw status | grep -v ALLOW | grep active | wc -l)
-if [ $RES -gt 0 ];then
-        printf "${GREEN}[OK] ${DEF_COLOR}\n";
-  else
-        printf "${RED}[KO] ${DEF_COLOR}\n";
-fi
-RES=$(sudo ufw status | grep 4242 | wc -l)
-if [ $RES -gt 1 ];then
-        printf "${GREEN}[OK] ${DEF_COLOR}\n";
-  else
-        printf "${RED}[KO] ${DEF_COLOR}\n";
-fi
-
-echo
-printf "${MAGENTA}Hostname${DEF_COLOR}\n";
+printf "${MAGENTA}6. Hostname${DEF_COLOR}\n";
 RES=$(who | head -1 | cut -d ' ' -f1)
 CONCAT="42"
 RES="$RES$CONCAT"
@@ -139,7 +133,7 @@ if [ $RES == $RES2 ];then
 fi
 
 echo
-printf "${MAGENTA}Password policy${DEF_COLOR}\n";
+printf "${MAGENTA}7. Password policy${DEF_COLOR}\n";
 RES=$(cd ~ && cat /etc/pam.d/common-password | grep -o minlen=10)
 if [ $RES == "minlen=10" ];then
         printf "${GREEN}1.[OK] ${GRAY} minlen ${DEF_COLOR}\n";
@@ -213,7 +207,7 @@ if [ -d "/var/log/sudo/" ];then
 fi
 
 echo
-printf "${MAGENTA}Crontab${DEF_COLOR}\n";
+printf "${MAGENTA}8. Crontab${DEF_COLOR}\n";
 RES=$(crontab -l | grep monitoring.sh | awk '$1 == "*/10" {print $1}')
 if [ $RES == "*/10" ];then
         printf "${GREEN}[OK] ${DEF_COLOR}\n";
@@ -221,3 +215,5 @@ if [ $RES == "*/10" ];then
         printf "${RED}[KO] ${DEF_COLOR}\n";
 fi
 echo
+
+printf ${WHITE}"Test Done! It's time to test a wordpress in a browser, and other services  if any.${DEF_COLOR}\n";
