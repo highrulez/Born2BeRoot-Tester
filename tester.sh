@@ -24,7 +24,13 @@ if [ $USER != "root" ];then
   exit;
 fi
 RES=$(ls /usr/bin/*session)
-printf "${MAGENTA}GUI MODE?${DEF_COLOR}\n";
+# printf "${MAGENTA}GUI MODE?${DEF_COLOR}\n";
+printf "${MAGENTA}  _    _    _     _    _    _    _  ${DEF_COLOR}\n";
+printf "${MAGENTA} / \  / \  / \   / \  / \  / \  / \ ${DEF_COLOR}\n";
+printf "${MAGENTA}( G )( U )( I ) ( M )( O )( D )( E )${DEF_COLOR}\n";
+printf "${MAGENTA} \_/  \_/  \_/   \_/  \_/  \_/  \_/ ${DEF_COLOR}\n";
+
+
   if [[ $RES == "/usr/bin/dbus-run-session" ]]; then
     printf "${GREEN}[OK] ${DEF_COLOR}\n";
   else
