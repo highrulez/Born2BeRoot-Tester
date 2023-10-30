@@ -1,9 +1,9 @@
 <h1>BORNTOBEROOT TESTER</h1>
                                                                                      
 HOW TO USE:
--  Git clone into your virtual machine.
--  Run the tester.h files with the sudo command if you are using a normal user.
--  Cronjob files detect only if the file name is <b>monitor.sh.</b> You can change the file name in the tester with your monitoring script file name.
+-  Clone the Git repository into your virtual machine.
+-  If you are using a regular user account, run the tester.h files with the sudo command.
+-  Cronjob files only detect the file named monitor.sh. You can modify the file name in the tester.sh to match your monitoring script's file name.
 
 Line 211
 ************************************************************************************************
