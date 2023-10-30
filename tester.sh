@@ -210,9 +210,9 @@ echo
 printf "${MAGENTA}8. Crontab${DEF_COLOR}\n";
 RES=$(crontab -l | grep monitor.sh | awk '$1 == "*/10" {print $1}')
 if [ $RES == "*/10" ];then
-        printf "${GREEN}[GOOD] ✔${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${GRAY} cronjob setting is */10${DEF_COLOR}\n";
   else
-        printf "${RED}[FAILED] ✗${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${GRAY} missing / wrong setting in cronjob${GRAY} ${DEF_COLOR}\n";
 fi
 echo
 
