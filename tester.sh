@@ -24,7 +24,7 @@ if [ $USER != "root" ];then
   exit;
 fi
 RES=$(ls /usr/bin/*session)
-printf "${BLUE}1. GUI MODE DISABLE?${DEF_COLOR}\n";
+printf "${MAGENTA}1. GUI MODE DISABLE?${DEF_COLOR}\n";
   if [[ $RES == "/usr/bin/dbus-run-session" ]]; then
     printf "${GREEN}[GOOD] ✔${GRAY} GUI mode disable${DEF_COLOR}\n";
   else
@@ -32,7 +32,7 @@ printf "${BLUE}1. GUI MODE DISABLE?${DEF_COLOR}\n";
 fi
 
 echo
-printf "${BLUE}6. Hostname${DEF_COLOR}\n";
+printf "${MAGENTA}6. Hostname${DEF_COLOR}\n";
 RES=$(env | grep SUDO_USER | head -1 | cut -d '=' -f2)
 CONCAT="42"
 RES="$RES$CONCAT"
@@ -44,7 +44,7 @@ if [ $RES == $RES2 ];then
 fi
 
 echo
-printf "${BLUE}2. Disk partitions${DEF_COLOR}\n";
+printf "${MAGENTA}2. Disk partitions${DEF_COLOR}\n";
 RES=$(lsblk | grep lvm | wc -l)
 if [ $RES -gt 1 ];then
   printf "${GREEN}[GOOD] ✔${GRAY} LVM${DEF_COLOR}\n";
@@ -71,7 +71,7 @@ if [ $RES -gt 0 ];then
 fi
 
 echo
-printf "${BLUE}3. Bonus Disk Partitions (Optional)${DEF_COLOR}\n";
+printf "${MAGENTA}3. Bonus Disk Partitions (Optional)${DEF_COLOR}\n";
 RES=$(lsblk | grep var | wc -l)
 if [ $RES -gt 0 ];then
         printf "${GREEN}[GOOD] ✔${GRAY} var${DEF_COLOR}\n";
@@ -98,7 +98,7 @@ if [ $RES -gt 0 ];then
 fi
 
 echo
-printf "${BLUE}4. UFW (Uncomplicated Firewall)${DEF_COLOR}\n";
+printf "${MAGENTA}4. UFW (Uncomplicated Firewall)${DEF_COLOR}\n";
 RES=$(sudo ufw status | grep -v ALLOW | grep active | wc -l)
 if [ $RES -gt 0 ];then
         printf "${GREEN}[GOOD] ✔${GRAY} Active${DEF_COLOR}\n";
@@ -113,7 +113,7 @@ if [ $RES -gt 1 ];then
 fi
 
 echo
-printf "${BLUE}4. UFW (Port 80 for HTTP - Bonus part)${DEF_COLOR}\n";
+printf "${MAGENTA}4. UFW (Port 80 for HTTP - Bonus part)${DEF_COLOR}\n";
 RES=$(sudo ufw status | grep 80 | wc -l)
 if [ $RES -gt 1 ];then
         printf "${GREEN}[GOOD] ✔${GRAY} Port 80 is open${DEF_COLOR}\n";
@@ -123,7 +123,7 @@ fi
 
 echo
 RES=$(sudo service ssh status | awk '$1 == "Active:"' | grep running | wc -l)
-printf "${BLUE}5. SSH${DEF_COLOR}\n";
+printf "${MAGENTA}5. SSH${DEF_COLOR}\n";
 if [ $RES -gt 0 ];then
         printf "${GREEN}[GOOD] ✔${GRAY} Active${DEF_COLOR}\n";
   else
@@ -142,7 +142,7 @@ if [ $RES -gt 1 ];then
 fi
 
 echo
-printf "${BLUE}7. Password policy${DEF_COLOR}\n";
+printf "${MAGENTA}7. Password policy${DEF_COLOR}\n";
 RES=$(cd ~ && cat /etc/pam.d/common-password | grep -o minlen=10)
 if [ $RES == "minlen=10" ];then
         printf "${GREEN}1.[GOOD] ✔${GRAY} minlen ${DEF_COLOR}\n";
@@ -216,7 +216,7 @@ if [ -d "/var/log/sudo/" ];then
 fi
 
 echo
-printf "${BLUE}8. Cronjob${DEF_COLOR}\n";
+printf "${MAGENTA}8. Cronjob${DEF_COLOR}\n";
 RES=$(crontab -l | grep monitor.sh | awk '$1 == "*/10" {print $1}')
 if [ $RES == "*/10" ];then
         printf "${GREEN}[GOOD] ✔${GRAY} cronjob setting is */10${DEF_COLOR}\n";
