@@ -11,16 +11,16 @@ CYAN='\033[0;96m'
 GRAY='\033[0;90m'
 WHITE='\033[0;97m'
 
-printf ${WHITE}"  ____                   ____  ____       ____             _   \n"${DEF_COLOR};
-printf ${WHITE}" | __ )  ___  _ __ _ __ |___ \| __ )  ___|  _ \ ___   ___ | |_ \n"${DEF_COLOR};
-printf ${WHITE}" |  _ \ / _ \| '__| '_ \  __) |  _ \ / _ \ |_) / _ \ / _ \| __|\n"${DEF_COLOR};
-printf ${GRAY}" | |_) | (_) | |  | | | |/ __/| |_) |  __/  _ < (_) | (_) | |_ \n"${DEF_COLOR};
-printf ${GRAY}" |____/ \___/|_|  |_| |_|_____|____/ \___|_| \_\___/ \___/ \__|\n\n"${DEF_COLOR};
+printf ${BLUE}"  ____                   ____  ____       ____             _   \n"${DEF_COLOR};
+printf ${BLUE}" | __ )  ___  _ __ _ __ |___ \| __ )  ___|  _ \ ___   ___ | |_ \n"${DEF_COLOR};
+printf ${BLUE}" |  _ \ / _ \| '__| '_ \  __) |  _ \ / _ \ |_) / _ \ / _ \| __|\n"${DEF_COLOR};
+printf ${BLUE}" | |_) | (_) | |  | | | |/ __/| |_) |  __/  _ < (_) | (_) | |_ \n"${DEF_COLOR};
+printf ${BLUE}" |____/ \___/|_|  |_| |_|_____|____/ \___|_| \_\___/ \___/ \__|\n\n"${DEF_COLOR};
                                                                                                                                                                       
 USER=$(whoami)
 
 if [ $USER != "root" ];then
-  printf "${RED}You sure you are root user? If not, then be a fucking root before you start!${DEF_COLOR}\n\n";
+  printf "${RED}You sure you are root user? If not, then be a fucking root before you start!${DEF_COLOR}\n";
   exit;
 fi
 RES=$(ls /usr/bin/*session)
@@ -216,13 +216,16 @@ if [ $RES == "*/10" ];then
 fi
 echo
 
+printf ${BLUE}" ___  ___  ___  ________  ___  ___  ________  ___  ___  ___       _______   ________     \n"${DEF_COLOR};
+printf ${BLUE}"|\  \|\  \|\  \|\   ____\|\  \|\  \|\   __  \|\  \|\  \|\  \     |\  ___ \ |\_____  \    \n"${DEF_COLOR};
+printf ${BLUE}"\ \  \\\  \ \  \ \  \___|\ \  \\\  \ \  \|\  \ \  \\\  \ \  \    \ \   __/| \|___/  /|   \n"${DEF_COLOR};
+printf ${BLUE}" \ \   __  \ \  \ \  \  __\ \   __  \ \   _  _\ \  \\\  \ \  \    \ \  \_|/__   /  / /   \n"${DEF_COLOR};
+printf ${BLUE}"  \ \  \ \  \ \  \ \  \|\  \ \  \ \  \ \  \\  \\ \  \\\  \ \  \____\ \  \_|\ \ /  /_/__  \n"${DEF_COLOR};
+printf ${BLUE}"   \ \__\ \__\ \__\ \_______\ \__\ \__\ \__\\ _\\ \_______\ \_______\ \_______\\________\\n"${DEF_COLOR};
+printf ${BLUE}"    \|__|\|__|\|__|\|_______|\|__|\|__|\|__|\|__|\|_______|\|_______|\|_______|\|_______|\n\n"${DEF_COLOR};
+                                                                                         
+                                                                                         
+                                                                                         
 
-printf ${BLUE}"    :::     ::::::::  :::    ::: :::        \n"${DEF_COLOR};
-printf ${BLUE}"   :+:     :+:    :+: :+:   :+:  :+:        \n"${DEF_COLOR};
-printf ${BLUE}"  +:+ +:+        +:+  +:+  +:+   +:+        \n"${DEF_COLOR};
-printf ${BLUE}" +#+  +:+      +#+    +#++:++    +#+        \n"${DEF_COLOR};
-printf ${BLUE}"+#+#+#+#+#+  +#+      +#+  +#+   +#+        \n"${DEF_COLOR};
-printf ${BLUE}"      #+#   #+#       #+#   #+#  #+#        \n"${DEF_COLOR};
-printf ${BLUE}"      ###  ########## ###    ### ########## \n\n"${DEF_COLOR};
 
 
