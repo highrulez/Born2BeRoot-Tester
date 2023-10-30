@@ -20,7 +20,7 @@ printf ${BLUE}" |____/ \___/|_|  |_| |_|_____|____/ \___|_| \_\___/ \___/ \__|\n
 USER=$(whoami)
 
 if [ $USER != "root" ];then
-  printf "${RED}You sure you are root user? If not, then be a fucking root before you start!${DEF_COLOR}\n";
+  printf "${RED}You sure you are root user? If not, then be a fucking root before you start!${DEF_COLOR}\n\n";
   exit;
 fi
 RES=$(ls /usr/bin/*session)
