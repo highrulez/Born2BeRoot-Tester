@@ -24,7 +24,7 @@ if [ $USER != "root" ];then
   exit;
 fi
 RES=$(ls /usr/bin/*session)
-printf "${MAGENTA}1. GUI MODE?${DEF_COLOR}\n";
+printf "${MAGENTA}1. GUI MODE DISABLE?${DEF_COLOR}\n";
   if [[ $RES == "/usr/bin/dbus-run-session" ]]; then
     printf "${GREEN}[GOOD] ✔${DEF_COLOR}\n";
   else
@@ -35,54 +35,54 @@ echo
 printf "${MAGENTA}2. Disk partitions${DEF_COLOR}\n";
 RES=$(lsblk | grep lvm | wc -l)
 if [ $RES -gt 1 ];then
-  printf "${GREEN}[GOOD] ✔${DEF_COLOR}\n";
+  printf "${GREEN}[GOOD] ✔${GRAY} LVM${DEF_COLOR}\n";
   else
-        printf "${RED}[FAILED] ✗${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${GRAY} no LVM partition${DEF_COLOR}\n";
 fi
 RES=$(lsblk | grep home | wc -l)
 if [ $RES -gt 0 ];then
-        printf "${GREEN}[GOOD] ✔${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${GRAY} home${DEF_COLOR}\n";
   else
-        printf "${RED}[FAILED] ✗${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${GRAY} no home partition${DEF_COLOR}\n";
 fi
 RES=$(lsblk | grep swap | wc -l)
 if [ $RES -gt 0 ];then
-        printf "${GREEN}[GOOD] ✔${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${GRAY} swap${DEF_COLOR}\n";
   else
-        printf "${RED}[FAILED] ✗${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${GRAY} no swap partition${DEF_COLOR}\n";
 fi
 RES=$(lsblk | grep root | wc -l)
 if [ $RES -gt 0 ];then
-        printf "${GREEN}[GOOD] ✔${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${GRAY} root${DEF_COLOR}\n";
   else
-        printf "${RED}[FAILED] ✗${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${GRAY} no root partition${DEF_COLOR}\n";
 fi
 
 echo
 printf "${MAGENTA}3. Bonus Disk Partitions (Optional)${DEF_COLOR}\n";
 RES=$(lsblk | grep var | wc -l)
 if [ $RES -gt 0 ];then
-        printf "${GREEN}[GOOD] ✔${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${GRAY} var${DEF_COLOR}\n";
   else
-        printf "${RED}[FAILED] ✗${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${GRAY} no var partition${DEF_COLOR}\n";
 fi
 RES=$(lsblk | grep srv | wc -l)
 if [ $RES -gt 0 ];then
-        printf "${GREEN}[GOOD] ✔${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${GRAY} srv${DEF_COLOR}\n";
   else
-        printf "${RED}[FAILED] ✗${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${GRAY} no srv partition${DEF_COLOR}\n";
 fi
 RES=$(lsblk | grep tmp | wc -l)
 if [ $RES -gt 0 ];then
-        printf "${GREEN}[GOOD] ✔${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${GRAY} tmp${DEF_COLOR}\n";
   else
-        printf "${RED}[FAILED] ✗${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${GRAY} no tmp partition${DEF_COLOR}\n";
 fi
-RES=$(lsblk | grep var-log | wc -l)
+RES=$(lsblk | grep var--log | wc -l)
 if [ $RES -gt 0 ];then
-        printf "${GREEN}[GOOD] ✔${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${GRAY} var--log${DEF_COLOR}\n";
   else
-        printf "${RED}[FAILED] ✗${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${GRAY} no var--log partition${DEF_COLOR}\n";
 fi
 
 echo
@@ -104,9 +104,9 @@ echo
 RES=$(sudo service ssh status | awk '$1 == "Active:"' | grep running | wc -l)
 printf "${MAGENTA}5. SSH${DEF_COLOR}\n";
 if [ $RES -gt 0 ];then
-        printf "${GREEN}[GOOD] ✔${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${GRAY} Active ${DEF_COLOR}\n";
   else
-        printf "${RED}[FAILED] ✗${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${GRAY} Not Active${DEF_COLOR}\n";
 fi
 RES=$(which lsof | wc -l)
 if [ $RES -eq 0 ];then
@@ -115,9 +115,9 @@ if [ $RES -eq 0 ];then
 fi
 RES=$(sudo lsof -i -P -n | grep sshd | grep LISTEN | grep 4242 | wc -l)
 if [ $RES -gt 1 ];then
-        printf "${GREEN}[GOOD] ✔${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${GRAY}Port 4242 ${DEF_COLOR}\n";
   else
-        printf "${RED}[FAILED] ✗${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${GRAY}Port 4242 ${DEF_COLOR}\n";
 fi
 
 echo
