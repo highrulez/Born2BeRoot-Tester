@@ -32,6 +32,18 @@ printf "${MAGENTA}1. GUI MODE DISABLE?${DEF_COLOR}\n";
 fi
 
 echo
+printf "${MAGENTA}6. Hostname${DEF_COLOR}\n";
+RES=$(whoami | head -1 | cut -d ' ' -f1)
+CONCAT="42"
+RES="$RES$CONCAT"
+RES2=$(hostname)
+if [ $RES == $RES2 ];then
+        printf "${GREEN}[GOOD] ✔${DEF_COLOR}\n";
+  else
+        printf "${RED}[FAILED] ✗${DEF_COLOR}\n";
+fi
+
+echo
 printf "${MAGENTA}2. Disk partitions${DEF_COLOR}\n";
 RES=$(lsblk | grep lvm | wc -l)
 if [ $RES -gt 1 ];then
@@ -118,18 +130,6 @@ if [ $RES -gt 1 ];then
         printf "${GREEN}[GOOD] ✔${GRAY} Port 4242 ${DEF_COLOR}\n";
   else
         printf "${RED}[FAILED] ✗${GRAY} Port 4242 ${DEF_COLOR}\n";
-fi
-
-echo
-printf "${MAGENTA}6. Hostname${DEF_COLOR}\n";
-RES=$(who | head -1 | cut -d ' ' -f1)
-CONCAT="42"
-RES="$RES$CONCAT"
-RES2=$(hostname)
-if [ $RES == $RES2 ];then
-        printf "${GREEN}[GOOD] ✔${DEF_COLOR}\n";
-  else
-        printf "${RED}[FAILED] ✗${DEF_COLOR}\n";
 fi
 
 echo
