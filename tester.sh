@@ -223,6 +223,6 @@ printf ${BLUE}"  +:+ +:+        +:+  +:+  +:+   +:+        \n"${DEF_COLOR};
 printf ${BLUE}" +#+  +:+      +#+    +#++:++    +#+        \n"${DEF_COLOR};
 printf ${BLUE}"+#+#+#+#+#+  +#+      +#+  +#+   +#+        \n"${DEF_COLOR};
 printf ${BLUE}"      #+#   #+#       #+#   #+#  #+#        \n"${DEF_COLOR};
-printf ${BLUE}"      ###  ########## ###    ### ########## "${DEF_COLOR};
+printf ${BLUE}"      ###  ########## ###    ### ########## \n\n"${DEF_COLOR};
 
 
