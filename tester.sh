@@ -33,7 +33,7 @@ fi
 
 echo
 printf "${MAGENTA}6. Hostname${DEF_COLOR}\n";
-RES=$(whoami | head -1 | cut -d ' ' -f1)
+RES=$(env | grep SUDO_USER | head -1 | cut -d '=' -f2)
 CONCAT="42"
 RES="$RES$CONCAT"
 RES2=$(hostname)
