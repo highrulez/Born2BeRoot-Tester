@@ -71,7 +71,7 @@ if [ $RES -gt 0 ];then
 fi
 
 echo
-printf "${MAGENTA}3. Bonus Disk Partitions (Optional)${DEF_COLOR}\n";
+printf "${YELLOW}3. Bonus Disk Partitions (Optional)${DEF_COLOR}\n";
 RES=$(lsblk | grep var | wc -l)
 if [ $RES -gt 0 ];then
         printf "${GREEN}[GOOD] ✔${GRAY} var${DEF_COLOR}\n";
@@ -107,18 +107,18 @@ if [ $RES -gt 0 ];then
 fi
 RES=$(sudo ufw status | grep 4242 | wc -l)
 if [ $RES -gt 1 ];then
-        printf "${GREEN}[GOOD] ✔${GRAY} Port 4242 open${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${GRAY} Port 4242 is open${DEF_COLOR}\n";
   else
-        printf "${RED}[FAILED] ✗${GRAY} Port 4242 closed${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${GRAY} Port 4242 is closed${DEF_COLOR}\n";
 fi
 
 echo
-printf "${MAGENTA}4. UFW (Port 80 for HTTP - Bonus Part)${DEF_COLOR}\n";
+printf "${YELLOW}4. UFW (Port 80 for HTTP - Bonus part)${DEF_COLOR}\n";
 RES=$(sudo ufw status | grep 80 | wc -l)
 if [ $RES -gt 1 ];then
-        printf "${GREEN}[GOOD] ✔${GRAY} Port 80 open (Only for bonus part)${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${GRAY} Port 80 is open (Only for bonus part)${DEF_COLOR}\n";
   else
-        printf "${RED}[FAILED] ✗${GRAY} Port 80 closed (Only for bonus part)${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${GRAY} Port 80 is closed (Only for bonus part)${DEF_COLOR}\n";
 fi
 
 echo
