@@ -107,9 +107,15 @@ if [ $RES -gt 0 ];then
 fi
 RES=$(sudo ufw status | grep 4242 | wc -l)
 if [ $RES -gt 1 ];then
-        printf "${GREEN}[GOOD] ✔${GRAY} Port 4242${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${GRAY} Port 4242 present${DEF_COLOR}\n";
   else
-        printf "${RED}[FAILED] ✗${GRAY} Port 4242${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${GRAY} No Port 4242${DEF_COLOR}\n";
+fi
+RES=$(sudo ufw status | grep 80 | wc -l)
+if [ $RES -gt 1 ];then
+        printf "${GREEN}[GOOD] ✔${GRAY} Port 80 present (Only for bonus part)${DEF_COLOR}\n";
+  else
+        printf "${RED}[FAILED] ✗${GRAY} No Port 80 (Only for bonus part)${DEF_COLOR}\n";
 fi
 
 echo
