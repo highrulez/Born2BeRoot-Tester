@@ -216,4 +216,4 @@ if [ $RES == "*/10" ];then
 fi
 echo
 
-printf ${WHITE}"Test Done! It's time to test a wordpress in a browser, and other services  if any.${DEF_COLOR}\n";
+printf ${WHITE}"Mandatory test Done! It's time to test WordPress in a browser, and other services if any (ex. ftp / fail2ban / Cloudflare tunnel).${DEF_COLOR}\n\n";
