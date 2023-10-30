@@ -145,74 +145,74 @@ echo
 printf "${MAGENTA}7. Password policy${DEF_COLOR}\n";
 RES=$(cd ~ && cat /etc/pam.d/common-password | grep -o minlen=10)
 if [ $RES == "minlen=10" ];then
-        printf "${GREEN}1.[GOOD] ✔${GRAY} minlen ${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${GRAY} minlen ${DEF_COLOR}\n";
   else
-        printf "${RED}1.[FAILED] ✗${GRAY} minlen ${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${GRAY} minlen ${DEF_COLOR}\n";
 fi
 RES=$(cd ~ && cat /etc/pam.d/common-password | grep -o ucredit=-1)
 if [ $RES == "ucredit=-1" ];then
-        printf "${GREEN}2.[GOOD] ✔${GRAY} uppercase ${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${GRAY} uppercase ${DEF_COLOR}\n";
   else
-        printf "${RED}2.[FAILED] ✗${GRAY} uppercase ${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${GRAY} uppercase ${DEF_COLOR}\n";
 fi
 RES=$(cd ~ && cat /etc/pam.d/common-password | grep -o lcredit=-1)
 if [ $RES == "lcredit=-1" ];then
-        printf "${GREEN}3.[GOOD] ✔${GRAY} lowercase ${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${GRAY} lowercase ${DEF_COLOR}\n";
   else
-        printf "${RED}3.[FAILED] ✗${GRAY} lowercase ${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${GRAY} lowercase ${DEF_COLOR}\n";
 fi
 RES=$(cd ~ && cat /etc/pam.d/common-password | grep -o dcredit=-1)
 if [ $RES == "dcredit=-1" ];then
-        printf "${GREEN}4.[GOOD] ✔${GRAY} digit ${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${GRAY} digit ${DEF_COLOR}\n";
   else
-        printf "${RED}4.[FAILED] ✗${GRAY} digit ${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${GRAY} digit ${DEF_COLOR}\n";
 fi
 RES=$(cd ~ && cat /etc/pam.d/common-password | grep -o maxrepeat=3)
 if [ $RES == "maxrepeat=3" ];then
-        printf "${GREEN}5.[GOOD] ✔${GRAY} consecutive char ${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${GRAY} consecutive char ${DEF_COLOR}\n";
   else
-        printf "${RED}5.[FAILED] ✗${GRAY} consecutive char ${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${GRAY} consecutive char ${DEF_COLOR}\n";
 fi
 RES=$(cd ~ && cat /etc/pam.d/common-password | grep -o difok=7)
 if [ $RES == "difok=7" ];then
-        printf "${GREEN}6.[GOOD] ✔${GRAY} difok ${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${GRAY} difok ${DEF_COLOR}\n";
   else
-        printf "${RED}6.[FAILED] ✗${GRAY} difok ${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${GRAY} difok ${DEF_COLOR}\n";
 fi
 RES=$(cd ~ && cat /etc/pam.d/common-password | grep -o enforce_for_root)
 if [ $RES == "enforce_for_root" ];then
-        printf "${GREEN}7.[GOOD] ✔${GRAY} enforce for root ${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${GRAY} enforce for root ${DEF_COLOR}\n";
   else
-        printf "${RED}7.[FAILED] ✗${GRAY} enforce for root ${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${GRAY} enforce for root ${DEF_COLOR}\n";
 fi
 RES=$(cd ~ && cat /etc/pam.d/common-password | grep -o reject_username)
 if [ $RES == "reject_username" ];then
-        printf "${GREEN}8.[GOOD] ✔${GRAY} reject username ${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${GRAY} reject username ${DEF_COLOR}\n";
   else
-        printf "${RED}8.[FAILED] ✗${GRAY} reject username ${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${GRAY} reject username ${DEF_COLOR}\n";
 fi
 RES=$(cd && cat /etc/login.defs | grep PASS_MAX_DAYS | grep -o 30)
 if [ $RES == "30" ];then
-        printf "${GREEN}9.[GOOD] ✔${GRAY} passwd expire days ${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${GRAY} passwd expire days ${DEF_COLOR}\n";
   else
-        printf "${RED}9.[FAILED] ✗${GRAY} passwd expire days ${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${GRAY} passwd expire days ${DEF_COLOR}\n";
 fi
 RES=$(cd && cat /etc/login.defs | grep PASS_MIN_DAYS | grep -o 2)
 if [ $RES == "2" ];then
-        printf "${GREEN}10.[GOOD] ✔${GRAY} days allowed before the modification ${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${GRAY} days allowed before the modification ${DEF_COLOR}\n";
   else
-        printf "${RED}10.[FAILED] ✗${GRAY} days allowed before the modification ${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${GRAY} days allowed before the modification ${DEF_COLOR}\n";
 fi
 RES=$(cd && cat /etc/login.defs | grep PASS_WARN_AGE | grep -o 7)
 if [ $RES == "7" ];then
-        printf "${GREEN}11.[GOOD] ✔${GRAY} warning message ${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${GRAY} warning message ${DEF_COLOR}\n";
   else
-        printf "${RED}11.[FAILED] ✗${GRAY} warning message ${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${GRAY} warning message ${DEF_COLOR}\n";
 fi
 if [ -d "/var/log/sudo/" ];then
-        printf "${GREEN}12.[GOOD] ✔${GRAY} folder /var/log/sudo exist ${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${GRAY} folder /var/log/sudo exist ${DEF_COLOR}\n";
   else
-        printf "${RED}12.[FAILED] ✗${GRAY} folder /var/log/sudo exist ${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${GRAY} folder /var/log/sudo exist ${DEF_COLOR}\n";
 fi
 
 echo
