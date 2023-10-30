@@ -26,9 +26,9 @@ fi
 RES=$(ls /usr/bin/*session)
 printf "${MAGENTA}1. GUI MODE DISABLE?${DEF_COLOR}\n";
   if [[ $RES == "/usr/bin/dbus-run-session" ]]; then
-    printf "${GREEN}[GOOD] ✔${DEF_COLOR}\n";
+    printf "${GREEN}[GOOD] ✔${GRAY} GUI mode disable${DEF_COLOR}\n";
   else
-    printf "${RED}[FAILED] ✗${DEF_COLOR}\n";
+    printf "${RED}[FAILED] ✗${GRAY} GUI mode enable${DEF_COLOR}\n";
 fi
 
 echo
@@ -89,22 +89,22 @@ echo
 printf "${MAGENTA}4. UFW (Uncomplicated Firewall)${DEF_COLOR}\n";
 RES=$(sudo ufw status | grep -v ALLOW | grep active | wc -l)
 if [ $RES -gt 0 ];then
-        printf "${GREEN}[GOOD] ✔${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${GRAY} Active${DEF_COLOR}\n";
   else
-        printf "${RED}[FAILED] ✗${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${GRAY} Not Active${DEF_COLOR}\n";
 fi
 RES=$(sudo ufw status | grep 4242 | wc -l)
 if [ $RES -gt 1 ];then
-        printf "${GREEN}[GOOD] ✔${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${GRAY} Port 4242${DEF_COLOR}\n";
   else
-        printf "${RED}[FAILED] ✗${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${GRAY} Port 4242${DEF_COLOR}\n";
 fi
 
 echo
 RES=$(sudo service ssh status | awk '$1 == "Active:"' | grep running | wc -l)
 printf "${MAGENTA}5. SSH${DEF_COLOR}\n";
 if [ $RES -gt 0 ];then
-        printf "${GREEN}[GOOD] ✔${GRAY} Active ${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${GRAY} Active${DEF_COLOR}\n";
   else
         printf "${RED}[FAILED] ✗${GRAY} Not Active${DEF_COLOR}\n";
 fi
@@ -115,9 +115,9 @@ if [ $RES -eq 0 ];then
 fi
 RES=$(sudo lsof -i -P -n | grep sshd | grep LISTEN | grep 4242 | wc -l)
 if [ $RES -gt 1 ];then
-        printf "${GREEN}[GOOD] ✔${GRAY}Port 4242 ${DEF_COLOR}\n";
+        printf "${GREEN}[GOOD] ✔${GRAY} Port 4242 ${DEF_COLOR}\n";
   else
-        printf "${RED}[FAILED] ✗${GRAY}Port 4242 ${DEF_COLOR}\n";
+        printf "${RED}[FAILED] ✗${GRAY} Port 4242 ${DEF_COLOR}\n";
 fi
 
 echo
