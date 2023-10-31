@@ -1,4 +1,4 @@
-<h1>BORNTOBEROOT TESTER</h1>
+<h1>BORN2BEROOT TESTER</h1>
                                                                                      
 HOW TO USE:
 -  Clone the Git repository into your virtual machine.
