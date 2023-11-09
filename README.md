@@ -9,6 +9,6 @@ HOW TO USE:
 Line 211<be>
 <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif"/>
 RES=$(crontab -l | grep <b><i>monitor.sh<i></b> | awk '$1 == "*/10" {print $1}')<br>
-<img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif"/><br>
+<img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif"/><br><br>
 
 <img src="https://i.ibb.co/PgQ4QJJ/Screenshot-2023-10-31-072953.png" alt="Screenshot-2023-10-31-072953" border="0" />
