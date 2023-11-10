@@ -11,16 +11,30 @@ CYAN='\033[0;96m'
 GRAY='\033[0;90m'
 WHITE='\033[0;97m'
 
-printf ${BLUE}"  ____                   ____  ____       ____             _   \n"${DEF_COLOR};
-printf ${BLUE}" | __ )  ___  _ __ _ __ |___ \| __ )  ___|  _ \ ___   ___ | |_ \n"${DEF_COLOR};
-printf ${BLUE}" |  _ \ / _ \| '__| '_ \  __) |  _ \ / _ \ |_) / _ \ / _ \| __|\n"${DEF_COLOR};
-printf ${CYAN}" | |_) | (_) | |  | | | |/ __/| |_) |  __/  _ < (_) | (_) | |_ \n"${DEF_COLOR};
-printf ${CYAN}" |____/ \___/|_|  |_| |_|_____|____/ \___|_| \_\___/ \___/ \__| by highrulez\n\n"${DEF_COLOR};
-                                                                                                                                                                      
+      printf ${BLUE}"  ____                   ____  ____       ____             _   \n"${DEF_COLOR};
+      printf ${BLUE}" | __ )  ___  _ __ _ __ |___ \| __ )  ___|  _ \ ___   ___ | |_ \n"${DEF_COLOR};
+      printf ${BLUE}" |  _ \ / _ \| '__| '_ \  __) |  _ \ / _ \ |_) / _ \ / _ \| __|\n"${DEF_COLOR};
+      printf ${CYAN}" | |_) | (_) | |  | | | |/ __/| |_) |  __/  _ < (_) | (_) | |_ \n"${DEF_COLOR};
+      printf ${CYAN}" |____/ \___/|_|  |_| |_|_____|____/ \___|_| \_\___/ \___/ \__| by highrulez\n\n"${DEF_COLOR};
+
+      echo "\n"
+	sleep 0.2 && echo ${GREEN}"\033[1A\033[KPlease Wait.. ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 0%"${DEF_COLOR}
+	sleep 0.5 && echo ${GREEN}"\033[1A\033[KPlease Wait.. █████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 10%"${DEF_COLOR}
+	sleep 0.5 && echo ${GREEN}"\033[1A\033[KPlease Wait.. ████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 20%"${DEF_COLOR}
+	sleep 0.5 && echo ${GREEN}"\033[1A\033[KPlease Wait.. ███████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 30%"${DEF_COLOR}
+	sleep 0.2 && echo ${GREEN}"\033[1A\033[KPlease Wait.. ██████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 40%"${DEF_COLOR}
+	sleep 0.5 && echo ${GREEN}"\033[1A\033[KPlease Wait.. █████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 50%"${DEF_COLOR}
+	sleep 0.5 && echo ${GREEN}"\033[1A\033[KPlease Wait.. ████████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 60%"${DEF_COLOR}
+	sleep 0.2 && echo ${GREEN}"\033[1A\033[KPlease Wait.. ███████████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 70%"${DEF_COLOR}
+	sleep 0.2 && echo ${GREEN}"\033[1A\033[KPlease Wait.. ███████████████████████████████▒▒▒▒▒▒▒▒▒ 80%"${DEF_COLOR}
+	sleep 0.5 && echo ${GREEN}"\033[1A\033[KPlease Wait.. ███████████████████████████████████▒▒▒▒▒ 90%"${DEF_COLOR}
+	sleep 0.2 && echo ${GREEN}"\033[1A\033[KPlease Wait.. ████████████████████████████████████████ 100%"${DEF_COLOR}
+	sleep 2 &&	echo "\033[1A\033[K"
+
 USER=$(whoami)
 
 if [ $USER != "root" ];then
-  printf "${RED}You sure you are root user? If not, then be a fucking root before you start!${DEF_COLOR}\n";
+  printf "${RED}You sure you are root user? If not, then be a fucking root before you start!${DEF_COLOR}\n\n";
   exit;
 fi
 RES=$(ls /usr/bin/*session)
