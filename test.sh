@@ -17,20 +17,19 @@ printf ${BLUE}" |  _ \ / _ \| '__| '_ \  __) |  _ \ / _ \ |_) / _ \ / _ \| __|\n
 printf ${CYAN}" | |_) | (_) | |  | | | |/ __/| |_) |  __/  _ < (_) | (_) | |_ \n"${DEF_COLOR};
 printf ${CYAN}" |____/ \___/|_|  |_| |_|_____|____/ \___|_| \_\___/ \___/ \__| by highrulez\n\n"${DEF_COLOR};
 
-  echo "\n"
-	sleep 0.2 && echo ${BLUE}"\033[1A\033[KCleaning in progress.. ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 0%"${DEF_COLOR}
-	sleep 0.2 && echo ${BLUE}"\033[1A\033[KCleaning in progress.. █████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 10%"${DEF_COLOR}
-	sleep 0.2 && echo ${BLUE}"\033[1A\033[KCleaning in progress.. ████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 20%"${DEF_COLOR}
-	sleep 0.2 && echo ${BLUE}"\033[1A\033[KCleaning in progress.. ███████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 30%"${DEF_COLOR}
-	sleep 0.2 && echo ${BLUE}"\033[1A\033[KCleaning in progress.. ██████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 40%"${DEF_COLOR}
-	sleep 0.2 && echo ${BLUE}"\033[1A\033[KCleaning in progress.. █████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 50%"${DEF_COLOR}
-	sleep 0.2 && echo ${BLUE}"\033[1A\033[KCleaning in progress.. ████████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 60%"${DEF_COLOR}
-	sleep 0.2 && echo ${BLUE}"\033[1A\033[KCleaning in progress.. ███████████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 70%"${DEF_COLOR}
-	sleep 0.2 && echo ${BLUE}"\033[1A\033[KCleaning in progress.. ███████████████████████████████▒▒▒▒▒▒▒▒▒ 80%"${DEF_COLOR}
-	sleep 0.2 && echo ${BLUE}"\033[1A\033[KCleaning in progress.. ███████████████████████████████████▒▒▒▒▒ 90%"${DEF_COLOR}
-	sleep 0.2 && echo ${BLUE}"\033[1A\033[KCleaning in progress.. ████████████████████████████████████████ 100%"${DEF_COLOR}
-	sleep 0.2 && echo "\033[1A\033[K"
-  echo "\n"
+  @echo "\n"
+	@sleep 0.2 &&	echo ${GREEN}"\033[1A\033[KPlease Wait.. ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 0%"${DEF_COLOR}
+	@sleep 0.5 &&	echo ${GREEN}"\033[1A\033[KPlease Wait.. █████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 10%"${DEF_COLOR}
+	@sleep 0.5 &&	echo ${GREEN}"\033[1A\033[KPlease Wait.. ████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 20%"${DEF_COLOR}
+	@sleep 0.5 &&	echo ${GREEN}"\033[1A\033[KPlease Wait.. ███████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 30%"${DEF_COLOR}
+	@sleep 0.2 &&	echo ${GREEN}"\033[1A\033[KPlease Wait.. ██████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 40%"${DEF_COLOR}
+	@sleep 0.5 &&	echo ${GREEN}"\033[1A\033[KPlease Wait.. █████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 50%"${DEF_COLOR}
+	@sleep 0.5 &&	echo ${GREEN}"\033[1A\033[KPlease Wait.. ████████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 60%"${DEF_COLOR}
+	@sleep 0.2 &&	echo ${GREEN}"\033[1A\033[KPlease Wait.. ███████████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 70%"${DEF_COLOR}
+	@sleep 0.2 &&	echo ${GREEN}"\033[1A\033[KPlease Wait.. ███████████████████████████████▒▒▒▒▒▒▒▒▒ 80%"${DEF_COLOR}
+	@sleep 0.5 &&	echo ${GREEN}"\033[1A\033[KPlease Wait.. ███████████████████████████████████▒▒▒▒▒ 90%"${DEF_COLOR}
+	@sleep 0.2 &&	echo ${GREEN}"\033[1A\033[KPlease Wait.. ████████████████████████████████████████ 100%"${DEF_COLOR}
+	@sleep 2 &&	echo "\033[1A\033[K"
 
 USER=$(whoami)
 
