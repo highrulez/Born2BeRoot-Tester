@@ -4,7 +4,7 @@ HOW TO USE:
 -  Clone the Git repository into your virtual machine.
 -  If you are using a regular user account, run the tester.h files with the sudo command.
 -  Cronjob files only detect the file named <b>monitor.sh</b>. You can modify the file name in the tester.sh to match your monitoring script's file name.
--  Run the command using "bash tester.sh"
+-  Run the command using "bash test.sh"
 <br>
 Line 211<be>
 <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif"/>
