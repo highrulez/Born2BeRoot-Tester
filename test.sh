@@ -17,6 +17,21 @@ printf ${BLUE}" |  _ \ / _ \| '__| '_ \  __) |  _ \ / _ \ |_) / _ \ / _ \| __|\n
 printf ${CYAN}" | |_) | (_) | |  | | | |/ __/| |_) |  __/  _ < (_) | (_) | |_ \n"${DEF_COLOR};
 printf ${CYAN}" |____/ \___/|_|  |_| |_|_____|____/ \___|_| \_\___/ \___/ \__| by highrulez\n\n"${DEF_COLOR};
 
+  echo "\n"
+	sleep 0.2 && echo ${BLUE}"\033[1A\033[KCleaning in progress.. ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 0%"${DEF_COLOR}
+	sleep 0.2 && echo ${BLUE}"\033[1A\033[KCleaning in progress.. █████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 10%"${DEF_COLOR}
+	sleep 0.2 && echo ${BLUE}"\033[1A\033[KCleaning in progress.. ████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 20%"${DEF_COLOR}
+	sleep 0.2 && echo ${BLUE}"\033[1A\033[KCleaning in progress.. ███████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 30%"${DEF_COLOR}
+	sleep 0.2 && echo ${BLUE}"\033[1A\033[KCleaning in progress.. ██████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 40%"${DEF_COLOR}
+	sleep 0.2 && echo ${BLUE}"\033[1A\033[KCleaning in progress.. █████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 50%"${DEF_COLOR}
+	sleep 0.2 && echo ${BLUE}"\033[1A\033[KCleaning in progress.. ████████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 60%"${DEF_COLOR}
+	sleep 0.2 && echo ${BLUE}"\033[1A\033[KCleaning in progress.. ███████████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 70%"${DEF_COLOR}
+	sleep 0.2 && echo ${BLUE}"\033[1A\033[KCleaning in progress.. ███████████████████████████████▒▒▒▒▒▒▒▒▒ 80%"${DEF_COLOR}
+	sleep 0.2 && echo ${BLUE}"\033[1A\033[KCleaning in progress.. ███████████████████████████████████▒▒▒▒▒ 90%"${DEF_COLOR}
+	sleep 0.2 && echo ${BLUE}"\033[1A\033[KCleaning in progress.. ████████████████████████████████████████ 100%"${DEF_COLOR}
+	sleep 0.2 && echo "\033[1A\033[K"
+  echo "\n"
+
 USER=$(whoami)
 
 if [ $USER != "root" ];then
@@ -225,4 +240,4 @@ if [ $RES == "*/10" ];then
 fi
 echo
 
-printf ${YELLOW}"Mandatory test Done! It's time to test WordPress in a browser, and other services if any (ex. ftp / fail2ban / Cloudflare tunnel).${DEF_COLOR}\n\n";
+printf ${CYAN}"Mandatory test Done! It's time to test WordPress in a browser, and other services if any (ex. ftp / fail2ban / Cloudflare tunnel).${DEF_COLOR}\n\n";
