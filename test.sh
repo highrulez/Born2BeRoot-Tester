@@ -20,7 +20,7 @@ printf ${CYAN}" |____/ \___/|_|  |_| |_|_____|____/ \___|_| \_\___/ \___/ \__| b
 USER=$(whoami)
 
 if [ $USER != "root" ];then
-  printf "${RED}You sure you are root user? If not, then be a fucking root before you start!${DEF_COLOR}\n\n";
+  printf "${RED}Opps! You don't have permission. Make sure you run the command with sudo permission - "sudo bash test.sh"${DEF_COLOR}\n\n";
   exit;
 fi
 RES=$(ls /usr/bin/*session)
